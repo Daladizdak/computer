@@ -27,6 +27,9 @@ header {
   z-index: 1000;
 }
 
+.nav-link:hover {
+  font-weight: bold;
+}
 
 .logo {
   height: 80px;
