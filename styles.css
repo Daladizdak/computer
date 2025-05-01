@@ -1,0 +1,223 @@
+/* === General Body & Font === */
+body {
+  padding-top: 100px;
+  font-family: Arial, sans-serif;
+  background-color: #e2e3e5;
+  color: #333;
+}
+
+/* === Header Styling === */
+header {
+  position: fixed; /* Fixes the position for the header */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999; /* Makes sure that the fixed position is at the top */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #002147;
+  color: white;
+}
+
+.navbar-wrapper {
+  width: 50%;
+  margin: 0 auto; /* Center it horizontally */
+  z-index: 1000;
+}
+
+
+.logo {
+  height: 80px;
+}
+
+/* === Page Layout (3 Sections) === */
+.page-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.side-panel {
+  width: 33%;
+  background-color: #dcdcdc;
+}
+
+.main-content {
+  width: 34%;
+  padding: 30px 20px;
+  background-color: #fff;
+}
+
+/* === Bookcard Sections === */
+.book-cards h2 {
+  font-size: 30px;
+  margin: 40px 0 20px;
+  text-align: center;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 38px;
+  margin-top: 30px;
+}
+
+/* === Product Cards === */
+.card {
+  width: 280px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  padding: 20px;
+}
+
+.card-content h1 {
+  font-size: 20px;
+  margin: 10px 0;
+  color: #222;
+}
+
+.card-content p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+
+.card-content button:hover {
+  background-color: #e0222e;
+}
+
+/* === Product Image === */
+.product-img {
+  width: 100%;
+  max-height: 120px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* === Basket Page (Centered) === */
+.checkout-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+}
+
+.basket-container {
+  max-width: 500px;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  padding: 20px;
+}
+
+.basket-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.basket-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.basket-item-details {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.checkout-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.checkout-list li {
+  background: #fff;
+  margin: 15px 0;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.checkout-list button {
+  background-color: #e0222e;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.checkout-list button:hover {
+  background-color: #b91d27;
+}
+
+/* === Footer === */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #002147;
+  color: white;
+}
+
+/* === The shopping basket Icon and its counter === */
+.basket-icon-wrapper {
+  position: relative;
+  margin-right: 20px;
+}
+
+.basket-count {
+  position: absolute;
+  top: -10px;
+  right: -12px;
+  background: #ff4081;
+  color: white;
+  border-radius: 50%;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* Mobile-friendly Layout */
+@media (max-width: 768px) {
+  .page-container {
+    flex-direction: column;
+  }
+
+  .side-panel {
+    display: none; /* Hide the grey side panels */
+  }
+
+  .main-content {
+    width: 100%; /* Full width on small screens */
+    padding: 20px;
+  }
+
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%; /* Cards take up most of the screen on mobile */
+  }
+
+  .checkout-wrapper {
+    padding: 20px;
+  }
+
+  .basket-container {
+    width: 100%;
+  }
+}
+

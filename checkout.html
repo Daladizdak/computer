@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wolfie Merchant - Checkout</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"/>
+</head>
+
+<body>
+  <div id="header-container"></div>
+
+<!-- Product card for the basket -->
+<div class="checkout-wrapper">
+  <div class="basket-container">
+    <h2>Basket</h2>
+    <ul id="basket-list" class="checkout-list"></ul>
+    <p>Total: £<span id="total">0.00</span></p>
+    <button id="checkout-btn" class="btn btn-success w-100 mt-3">
+      <i class="fas fa-credit-card"></i> Checkout
+    </button>
+    <button id="continue-shopping-btn" class="btn btn-outline-secondary w-100 mt-2">
+      <i class="fas fa-arrow-left"></i> Continue Shopping
+    </button>
+  </div>
+</div>
+
+  <!-- Bootstrap modal for checkout information -->
+<div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form id="checkout-form">
+        <div class="modal-header">
+          <h5 class="modal-title" id="checkoutModalLabel">Checkout</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="first-name" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="first-name" required>
+          </div>
+          <div class="mb-3">
+            <label for="last-name" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="last-name" required>
+          </div>
+          <div class="mb-3">
+            <label for="card-number" class="form-label">Card Number</label>
+            <input type="text" class="form-control" id="card-number" required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-success">Pay</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+  
+
+  <footer>
+    <p>Wolfie Merchant</p>
+  </footer>
+
+  
+  <script>
+    fetch("header.html")
+      .then((response) => response.text())
+      .then((data) => {
+        document.getElementById("header-container").innerHTML = data;
+        updateBasketCounter();
+      });
+  </script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="checkout.js"></script>
+</body>
+</html>
