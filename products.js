@@ -1,3 +1,4 @@
+ // Products list
 const products = [
   { id: 1, name: "LV coat", price: 1000.00, category: "Clothing", image: "LV.png" },
   { id: 2, name: "Gucci pullover", price: 500.00, category: "Clothing", image: "gucci.png"  },
@@ -16,6 +17,7 @@ function displayProducts() {
   const electronics = document.getElementById("electronics-products");
   const fragrances = document.getElementById("fragrance-products");
 
+   // Loops through all the products and make product cards for each of them
   products.forEach(product => {
     const card = document.createElement("div");
     card.className = "card mb-3";
@@ -28,10 +30,11 @@ function displayProducts() {
         <p>£${product.price.toFixed(2)}</p>
         <button class="btn btn-danger" data-id="${product.id}">Add to Basket</button>
       </div>`;
-    
+
+     // Event listener for add to basket button
     card.querySelector("button").addEventListener("click", () => addToBasket(product.id));
 
-    // Only append if the container exists
+    // Since there are multiple webpages and not all the products are in them, only appends the products if the container exists
     if (product.category === "Clothing" && clothing) {
       clothing.appendChild(card);
     } else if (product.category === "Electronics" && electronics) {
@@ -42,6 +45,7 @@ function displayProducts() {
   });
 }
 
+ // Function for the add to basket button and counter
 function addToBasket(productId) {
   let basket = JSON.parse(localStorage.getItem('basket')) || [];
   const product = products.find(p => p.id === productId);
